@@ -8,7 +8,7 @@ int main(void)
  
   curl = curl_easy_init();
   if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
+    curl_easy_setopt(curl, CURLOPT_URL, "https://api.ipify.org?format=json");
     res = curl_easy_perform(curl);
  
     if(CURLE_OK == res) {
@@ -17,7 +17,7 @@ int main(void)
       res = curl_easy_getinfo(curl, CURLINFO_CONTENT_TYPE, &ct);
  
       if((CURLE_OK == res) && ct)
-        printf("We received Content-Type: %s\n", ct);
+        printf("\nWe received Content-Type: %s\n", ct);
     }
  
     /* always cleanup */
