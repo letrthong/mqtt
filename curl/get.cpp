@@ -45,15 +45,17 @@ static size_t header_callback(char *buffer, size_t size,
 }
 
 
-int main(void)
+int main(void)  
 {
   CURL *curl;
   CURLcode res;
  
   curl = curl_easy_init();
   if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://api.ipify.org?format=json");
+    curl_easy_setopt(curl, CURLOPT_URL, "http://api.ipify.org?format=json");
 
+    // https://free-proxy-list.net/
+    curl_easy_setopt(curl, CURLOPT_PROXY, "http://118.26.110.48:8080");
     //curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_cb);
 
       curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback);
