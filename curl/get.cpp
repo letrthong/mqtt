@@ -55,6 +55,7 @@ int main(void)
     curl_easy_setopt(curl, CURLOPT_URL, "http://api.ipify.org?format=json");
 
     // https://free-proxy-list.net/
+   // https://curl.se/libcurl/c/CURLOPT_PROXY.html
     curl_easy_setopt(curl, CURLOPT_PROXY, "http://118.26.110.48:8080");
     //curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_cb);
 
